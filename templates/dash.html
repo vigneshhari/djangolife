@@ -1,0 +1,14 @@
+<h2 align = "center" > Messages </h2> 
+<h5 align = "center"> Welcome {{name}} <a href = "/message/logout">Log out </a> </h5>
+<h5 align="center"><a href="/message/newmes">Create a new Message</a></h5>
+<ul>
+{%for e in dat%}
+<br>
+{% with e.user_id|stringformat:"i" as id %}
+{% with link|add:id as num %}
+<l1><a href = {{num}} > {{e.name}} </a>
+<br>
+{% endwith %}
+{% endwith %}
+{%endfor%}
+</l1>

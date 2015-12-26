@@ -1,0 +1,19 @@
+<h3 align = 'Center'> Messages from {{name}}</h3>
+<br>
+<h4 align="center"><a href = '/message/dash'>Home Page</a></h4>
+<br>
+{%for e in dat%}
+{%if recid == e.sender_id%}
+<h4 align="right">{{e.message}} </h4>
+{%endif%}
+{%if recid != e.sender_id%}
+<h4 align="left">{{e.message}} </h4>
+{%endif%}
+{%endfor%}
+<form action = "/message/send" method = "POST">
+    <div class = "message">
+    <h3 align = 'center' > Send: <input type = "text" name = 'message' value = {{form.message}}></h3>
+    {%csrf_token%}
+    <h3 align = 'center'><input type = "submit" value = "Send"></h3>
+	</div>
+	</form>

@@ -1,0 +1,12 @@
+<h1 align="center">LOGIN To CC Messaging </h1>
+<br>
+<br>
+<form action = "/app/login" method = "POST">
+    <div class = "LoginForm">
+    <h3 align = 'center' > Email: <input type = "text" name = 'username' value = {{form.username}}></h3>
+    <h3 align = 'center'>Password:<input type = "password" name = 'password' value = {{form.password}}></h3>
+    {%csrf_token%}
+    <h3 align = 'center'><input type = "submit" value = "Log in"></h3>
+	</div>
+	</form>
+	<h3 align = 'center'>{{message}} </h3>
